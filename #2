@@ -1,0 +1,9 @@
+no1,no2 = 0,1
+total = 0
+while True:
+    no1,no2 = no2, no1+no2
+    if no2 >= 4000000:
+        break
+    if no2 % 2 == 0:
+        total += no2
+print(total)
