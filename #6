@@ -1,0 +1,10 @@
+sum1,sum2,sqsum2=0,0,0
+
+for i in range(1,101):
+    sum1+=i**2
+    
+for j in range(1,101):
+    sum2+=j
+    sqsum2=sum2**2
+    
+print(sqsum2-sum1)
