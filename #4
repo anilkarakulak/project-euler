@@ -1,0 +1,8 @@
+palindrome=[]
+for i in range(100,1001):
+    for j in range(100,1001):
+        b=str(i*j)
+        c=b[::-1]
+        if c==b:
+            palindrome.append(int(b))
+print(sorted(palindrome)[-1])
