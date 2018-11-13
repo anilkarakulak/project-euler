@@ -1,0 +1,11 @@
+def main():
+    number=10001
+    x=2
+    primes=[]
+    while(len(primes)<number):
+        if(all(x%prime for prime in primes)):
+            primes.append(x)
+        x+=1
+    print(primes[10000])
+main()
+         
