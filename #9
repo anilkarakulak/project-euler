@@ -1,0 +1,18 @@
+def main():
+    sum_of=1000
+    
+    for c in range(sum_of):
+        for b in range(c):
+            for a in range(b):
+                if a+b+c==sum_of:
+                    if triplet(a,b,c):
+                        print(a,b,c)
+    print("finish")
+    
+def triplet(a,b,c):
+    if a**2+b**2==c**2:
+        return True
+    else:
+        return False
+    
+main()
