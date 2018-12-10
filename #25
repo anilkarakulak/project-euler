@@ -1,0 +1,14 @@
+num1 = 1
+num2 = 1
+fibonacci = [num1,num2]
+for i in range(10000):
+    num1,num2 = num2,num1+num2
+    fibonacci.append(num2)
+i=1
+while True:
+    a=list(str(fibonacci[i]))
+    if len(a)==1000:
+        print(i+1)
+        break
+    else:
+        i+=1
