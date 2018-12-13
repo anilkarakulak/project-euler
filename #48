@@ -1,0 +1,5 @@
+b=[]
+for i in range(1,1001):
+    b.append(i**i)
+a=list(str(sum(b)))
+print("".join(a[len(a)-10::]))
