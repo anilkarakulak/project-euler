@@ -1,0 +1,11 @@
+import math
+toplam=0
+b=[]
+for x in range(3,1000000):
+    a=list(str(x))
+    for i in range(len(a)):
+        toplam+=math.factorial(int(a[i-1]))
+    if toplam==x:
+        b.append(x)
+    toplam=0
+print(sum(b))
