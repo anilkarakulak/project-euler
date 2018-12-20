@@ -1,0 +1,8 @@
+rows = []
+with open('untitled.txt') as f:
+    for line in f:
+        rows.append([int(i) for i in line.rstrip('\n').split(" ")])
+for j in range(len(rows)-1,0,-1):
+    for i in range(len(rows[j-1])):
+        rows[j-1][i]+=max(rows[j][i],rows[j][i+1])
+print(rows[0][0])
