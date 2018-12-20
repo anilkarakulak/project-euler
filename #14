@@ -1,0 +1,16 @@
+def collatz(num):
+    a=[num]
+    while True:
+        if a[len(a)-1]%2==0:
+            a.append(int(a[len(a)-1]/2))
+        elif a[len(a)-1]%2==1 and not a[len(a)-1]==1:
+            a.append(int(3*a[len(a)-1]+1))
+        elif a[len(a)-1]==1:
+            break
+    return len(a)
+b=[]
+for i in range(1000000,1,-1):
+    b.append(collatz(i))
+    
+if collatz(i)==max(b):
+    print(i)
