@@ -1,0 +1,15 @@
+import datetime
+
+def sundays(first,last):
+    y,m,d=first.year, first.month,1
+    count=0
+    while(y,m,d)<=(last.year,last.month,last.day):
+        if datetime.date(y,m,d).weekday()==6:
+            count+=1
+        m+=1
+        if m==13:
+            m=1
+            y+=1
+    return count
+
+print(sundays(datetime.date(1901,1,1), datetime.date(2000,12,31)))
