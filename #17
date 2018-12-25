@@ -4,15 +4,26 @@ num2words = {1: 'One', 2: 'Two', 3: 'Three', 4: 'Four', 5: 'Five', \
             15: 'Fifteen', 16: 'Sixteen', 17: 'Seventeen', 18: 'Eighteen', \
             19: 'Nineteen', 20: 'Twenty', 30: 'Thirty', 40: 'Forty', \
             50: 'Fifty', 60: 'Sixty', 70: 'Seventy', 80: 'Eighty', \
-            90: 'Ninety', 0: 'Zero'}
-
+            90: 'Ninety', 0: ''}
 def n2w(number):
-    if number<20:
-        print(num2words[number])
+    if number<20 and number>0:
+        return list(num2words[number])
     elif number>19 and number<100:
-        print(num2words[number-number%10]+num2words[number%10])
-    elif number>99:
-        print(num2words[(number-number%100)/100]+"hundred"+num2words[number-number%10]+num2words[number%10])
-        
-
-n2w(909)
+        return list(num2words[number-number%10]+num2words[number%10])
+    elif number>99 and number<1000:
+        if(number%100)<20 and (number%100)>10:
+            return list(num2words[number//100]+"Hundredand"+num2words[number%100])
+        else:
+            if(number%100)==0:
+                return list(num2words[number//100]+"Hundred")
+            else:
+                return list(num2words[number//100]+"Hundredand"+num2words[number%100-number%10]+num2words[number%10])
+    elif number==1000:
+        return list("onethousand")
+a=[]
+sum_of=0
+for i in range(1,1001):
+    a.append(n2w(i))
+for j in range(0,len(a)):
+    sum_of+=len(a[j])
+print(sum_of)
