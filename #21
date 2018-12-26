@@ -1,0 +1,3 @@
+divisors=lambda x: sum([i for i in range(1,x) if x%i==0])
+sum_divisors=sum([i for i in range(1,10000) if divisors(divisors(i))==i and divisors(i)!=i])
+print(sum_divisors)
