@@ -1,0 +1,12 @@
+def pentas():
+    a=set()
+    i=1000
+    while True:
+        i+=1
+        b=(3*i*i-i)//2
+        for j in a:
+            if b-j in a and b-2*j in a:
+                return b-2*j
+        a.add(b)
+
+print(pentas())
