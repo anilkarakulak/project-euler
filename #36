@@ -1,0 +1,3 @@
+decimal=lambda x: bin(x)[2:]
+a=[i for i in range(1000001) if (str(i)==str(i)[::-1] and str(decimal(i))==str(decimal(i))[::-1])]
+print(sum(a))
