@@ -1,0 +1,20 @@
+def is_prime(num):
+    for i in range(2,num):
+        if (num % i == 0 ):
+            return False
+    return True
+
+def is_pandigital(nr, n):
+    digits = ''.join(map(str, range(1, n + 1)))
+    nr = str(nr)
+    for i in digits:
+        if str(i) not in nr[0:9]:
+            return False
+        if str(i) not in nr[-9:]:
+            return False
+    return True
+
+for i in range(7654321,1234567,-2):
+    if is_pandigital(i,7) and is_prime(i):
+        print(i)
+        break
