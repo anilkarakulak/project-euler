@@ -1,0 +1,8 @@
+a,b,c=0,0,[]
+for a in range(101):
+    for b in range(101):
+        d=list(str(a**b))
+        for i in range(len(d)):
+            d[i]=int(d[i])
+        c.append(sum(d))
+print(max(c))
