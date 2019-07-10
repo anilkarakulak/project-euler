@@ -1,0 +1,13 @@
+i=1
+while True:
+    a=list(set(list(str(i))))
+    b=list(set(list(str(i*2))))
+    c=list(set(list(str(i*3))))
+    d=list(set(list(str(i*4))))
+    e=list(set(list(str(i*5))))
+    f=list(set(list(str(i*6))))
+    
+    if a==b==c==d==e==f:
+        print(i)
+        break
+    i+=1
