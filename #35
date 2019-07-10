@@ -1,17 +1,22 @@
 import math
-import time
-start=time.time()
+
 def asal_mi(n):
     if n % 2 == 0 and n > 2: 
         return False
     return all(n % i for i in range(3, int(math.sqrt(n)) + 1, 2))
 
-def reverse(num):
-    a=str(num)
-    return int(a[::-1])
-  
-b=[i for i in range(2,1000000) if asal_mi(i) and asal_mi(reverse(i))]
+def circular(num):
+    num=list(str(num))
+    a=[]
+    for i in range(len(num)):
+        num.append(num[0])
+        num.remove(num[0])
+        a.append(asal_mi(int("".join(num))))
+    return a
 
-print(b)
+b=[]
 
-print("it tooks ",(time.time()-start))
+for i in range(2,1000000):
+    if all(circular(i)):
+        b.append(i)
+print(len(b))
