@@ -1,0 +1,14 @@
+d=[0]
+for x in range(1,1000):
+    a,b,c=int(x/2),[],[]
+    for i in range(1,a):
+        for j in range(1,a):
+                if (x**2-2*x*i)/(2*x-2*i)==j:
+                    c.append(i)
+                    c.append(j)
+                    b.append(sorted(list(c)))
+                    c=[]
+    if len(b)>d[0]:
+        d[0]=len(b)
+        print(x)
+print(d)
